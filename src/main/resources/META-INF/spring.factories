@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.fonyou.ddr.lib.autoconf.MessagingAutoConfiguration
