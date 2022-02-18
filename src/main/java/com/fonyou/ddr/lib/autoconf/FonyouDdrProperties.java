@@ -16,35 +16,41 @@ public class FonyouDdrProperties {
 	
 	/** Available adapters implementations. */
 	public enum MessagingImplTypes {
-		GCP_PUB_SUB, WITHOUT_IMPL;
+		
+		/** Google Cloud Platform Pub-Sub. */
+		GCP_PUB_SUB,
+		
+		/** No implementation provided. */
+		DISABLED;
+		
 	}
 	
 	/** Specific adapter name implementation to instance. */
-	private MessagingImplTypes adapterImplType = MessagingImplTypes.WITHOUT_IMPL;
-	
+	private MessagingImplTypes adapterImplType = MessagingImplTypes.DISABLED;
+
 	
 	public String getDestBaseTableName() {
 		return destBaseTableName;
 	}
-	
+
 	public void setDestBaseTableName(String destBaseTableName) {
 		this.destBaseTableName = destBaseTableName;
 	}
-	
+
 	public String getPubSubTopicName() {
 		return pubSubTopicName;
 	}
-	
+
 	public void setPubSubTopicName(String pubSubTopicName) {
 		this.pubSubTopicName = pubSubTopicName;
 	}
-	
+
 	public MessagingImplTypes getAdapterImplType() {
 		return adapterImplType;
 	}
-	
-	public void setAdapterImplType(String adapterImplType) {
-		this.adapterImplType = MessagingImplTypes.valueOf(adapterImplType);
+
+	public void setAdapterImplType(MessagingImplTypes adapterImplType) {
+		this.adapterImplType = adapterImplType;
 	}
 	
 }
